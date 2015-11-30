@@ -1,4 +1,7 @@
 @Notifications = do ->
+  clear: -> @clean()
+  clean: -> toastr.clear()
+
   show_error: (error) ->
     toastr.error(error) if error
 

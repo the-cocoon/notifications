@@ -13,6 +13,7 @@ module Notifications
         unless excepts.include?(k.to_sym)
           k = self.class.human_attribute_name k
           hash[k].blank? ? hash[k] = [v] : hash[k].push(v)
+          hash[k].uniq!
         end
 
         hash
@@ -31,7 +32,7 @@ module Notifications
 
           hash[key]       = {} if hash[key].blank?
           hash[key][name] = [] if hash[key][name].blank?
-          hash[key][name].push v
+          hash[key][name].push(v)
         end
 
         hash
