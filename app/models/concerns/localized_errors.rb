@@ -1,8 +1,7 @@
+# include ::Notifications::LocalizedErrors
 module Notifications
   module LocalizedErrors
     extend ActiveSupport::Concern
-
-    # include Notifications::LocalizedErrors
 
     # @post.localized_errors(except: [:'comment.title'])
     def localized_errors opts = {}
